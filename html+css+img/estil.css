@@ -1,12 +1,28 @@
 body{
     font-family:'Gugi', sans-serif;
-    background-color: coral;
-    color: white;
     margin: 0;
+    padding: 0;
     text-align: center;
-    padding:0;
+}
 
+    .background_1 {
+        color: white;
+        background-color: coral;
+    }
 
+    .background_2{
+        color:coral;
+        background-color:white;
+    }
+    body.dark_mode.background_1 {
+        color: rgb(19, 19, 19);
+        background-color: rgb(172, 46, 0);
+    }
+
+    body.dark_mode .background_2 {
+        color:rgb(172, 46, 0);
+        background-color:rgb(19, 19, 19); ;
+    }
     ul {
         list-style: none;
         line-height: 1.5em;
@@ -23,30 +39,28 @@ body{
         }
 
     h1, .inici {
+        margin-top: 0;
         font-size: 5.5em; 
         letter-spacing: 0.2em;
         line-height: 1em;
     }
-    table, th, tr, td, form, input,caption, .compra {
-        background-color: white;
+    table, th, tr, td, form, input,caption, button, .compra {
         border-radius: 2em;
-        color: coral;
         padding: 0.5em;
         margin: 1.5em;
         border:0.2em solid coral;
     }
 header {
     text-align: center;
-    color: coral;
     border-bottom-left-radius: 4em;
     border-bottom-right-radius: 4em;
-    background-color: white;
     width: 100%;
-    padding: 2em 1em 3em 1em;
+    padding: 4em 0 2em 0;
+    margin-bottom: 3em;
 }
 main {
-    padding: 3em;
-
+    padding: 1em 2em 3em 2em;
+}
     img, iframe {
             border-radius: 1em;
             margin: 3em 1em 3em 1em;
@@ -64,7 +78,6 @@ main {
 
     form {
         width: 50%;
-        justify-content: center;
         margin-left: auto;
         margin-right: auto;
     }
@@ -101,9 +114,7 @@ main {
 
     .descripcio {
         text-align: justify;
-        background-color: white;
-        color: coral;
-        padding: 2em 2em 2em 2em;
+        padding: 2em;
         margin: 2em 3em 2em 3em;
         border-radius: 3em;
      }
@@ -122,10 +133,8 @@ main {
     }
         #header1, #header2, #joc1, #joc2, #joc3, #joc4, 
         #joc5, #joc6, #joc7, #joc8, #noticies, #llancaments, #peu, #peu2 {
-            background-color: white;
             line-height: 2em;
             border-radius: 2em;
-            color: coral;
             padding: 1em 3em 3em 3em;
             display: block;
             overflow: auto;
@@ -192,17 +201,13 @@ main {
             overflow-wrap: break-word;
         }
 
-    }
-        
-    } 
-    .bottom {background-color: white ;
-        text-align: center;
-        color: coral;
+    }  
+    
+    .bottom {
         border-top-left-radius: 4em;
         border-top-right-radius: 4em;
-        margin: 3em auto auto auto;
-        height: 25em;
+        height: 10%;
         width: 100%;
-        padding-top: 3em;  
+        padding: 2em 0 5em 0;  
     }
-}
+
