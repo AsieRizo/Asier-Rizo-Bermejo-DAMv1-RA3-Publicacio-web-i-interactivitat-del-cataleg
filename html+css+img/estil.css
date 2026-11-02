@@ -1,0 +1,208 @@
+body{
+    font-family:'Gugi', sans-serif;
+    background-color: coral;
+    color: white;
+    margin: 0;
+    text-align: center;
+    padding:0;
+
+
+    ul {
+        list-style: none;
+        line-height: 1.5em;
+        padding-left: 0;
+        text-align: left;
+        }
+         .nav { 
+        margin: 0.5em auto 0.5em auto;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        gap: 2em;
+        padding: 1em;
+        }
+
+    h1, .inici {
+        font-size: 5.5em; 
+        letter-spacing: 0.2em;
+        line-height: 1em;
+    }
+    table, th, tr, td, form, input,caption, .compra {
+        background-color: white;
+        border-radius: 2em;
+        color: coral;
+        padding: 0.5em;
+        margin: 1.5em;
+        border:0.2em solid coral;
+    }
+header {
+    text-align: center;
+    color: coral;
+    border-bottom-left-radius: 4em;
+    border-bottom-right-radius: 4em;
+    background-color: white;
+    width: 100%;
+    padding: 2em 1em 3em 1em;
+}
+main {
+    padding: 3em;
+
+    img, iframe {
+            border-radius: 1em;
+            margin: 3em 1em 3em 1em;
+            box-shadow: white 1em 1em;
+        }
+    div article img, ul img {
+        box-shadow: coral 1em 1em;
+    }
+    table {
+            
+            table-layout:auto;
+            border-collapse: collapse;
+            width: 100%;
+             }
+
+    form {
+        width: 50%;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
+    .hover:hover{
+        color: blueviolet;
+    }
+
+
+        .doubleflexbox{
+       
+        flex-direction: row;
+        flex-wrap: wrap;
+        display:inline-flex;
+        justify-content:space-around;
+        align-items: center;
+        width: 100%;
+        }
+
+    .flexboxdiv{
+        flex: 1 1 320px;
+        display: block;
+        max-width: 100%;
+        min-width: 0;
+        margin: 2em; 
+        }
+
+    
+
+    .jocs{
+     text-align: center;
+     margin: 3em 0 3em 0;
+        }
+
+    .descripcio {
+        text-align: justify;
+        background-color: white;
+        color: coral;
+        padding: 2em 2em 2em 2em;
+        margin: 2em 3em 2em 3em;
+        border-radius: 3em;
+     }
+    #grid {
+            display: grid;
+            margin: 3em 1em 1em 3em;
+            grid-gap: 2em;
+            grid-template-columns: 7fr 7fr 5fr;
+            grid-template-areas: 
+            "header1 header1 header2"
+            "joc1 joc2 noticies"
+            "joc3 joc4 llancaments"
+            "joc5 joc6 llancaments"
+            "joc7 joc8 llancaments"
+            "peu peu peu2";
+    }
+        #header1, #header2, #joc1, #joc2, #joc3, #joc4, 
+        #joc5, #joc6, #joc7, #joc8, #noticies, #llancaments, #peu, #peu2 {
+            background-color: white;
+            line-height: 2em;
+            border-radius: 2em;
+            color: coral;
+            padding: 1em 3em 3em 3em;
+            display: block;
+            overflow: auto;
+            min-width: 10%;
+            
+        }
+
+        #header1 {
+            grid-area: header1;
+        }
+        #header2 {
+            grid-area: header2;   
+        }
+        #joc1 {
+            grid-area: joc1;
+           
+        }
+        #joc2 {
+            grid-area: joc2; 
+          
+        }
+        #joc3 {
+            grid-area: joc3;  
+        }
+        #joc4 {
+            grid-area: joc4;
+           }
+        #joc5 {
+            grid-area: joc5;
+        }
+        #joc6 {
+            grid-area: joc6; 
+        }
+        #joc7 {
+            grid-area: joc7;
+        }
+        #joc8 {
+            grid-area: joc8;
+        }
+        #noticies {
+            grid-area: noticies;
+            }
+        #llancaments {
+            grid-area: llancaments;
+            }
+         #peu {
+            grid-area: peu;
+        }
+         #peu2 {
+            grid-area: peu2; }
+    
+    @media(max-width: 768px) {
+        #grid { grid-template-columns: 1fr; 
+            grid-template-areas: none; }
+
+        #grid > * { grid-area: auto; }
+
+        img, iframe {
+            max-width: 100%;
+             height: auto;
+            }
+
+        h1, .inici {font-size: 3.5em;
+            overflow-wrap: break-word;
+        }
+
+    }
+        
+    } 
+    .bottom {background-color: white ;
+        text-align: center;
+        color: coral;
+        border-top-left-radius: 4em;
+        border-top-right-radius: 4em;
+        margin: 3em auto auto auto;
+        height: 25em;
+        width: 100%;
+        padding-top: 3em;  
+    }
+}
