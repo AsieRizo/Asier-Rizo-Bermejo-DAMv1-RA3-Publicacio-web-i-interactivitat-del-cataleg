@@ -19,7 +19,7 @@ body{
         background-color: rgb(172, 46, 0);
     }
 
-    body.dark_mode .background_2 {
+    body.dark_mode .background_2, body.dark_mode .background_2 td   {
         color:rgb(172, 46, 0);
         background-color:rgb(19, 19, 19); ;
         border: 0.2em solid rgb(172, 46, 0);
@@ -53,11 +53,11 @@ body{
 
     h1, .inici {
         margin-top: 0;
-        font-size: 5.5em; 
+        font-size: 6.5em; 
         letter-spacing: 0.2em;
         line-height: 1em;
     }
-    table, th, tr, td, form, input,caption, button, .compra {
+    table, th, tr, td, form, input,caption, button {
         border-radius: 2em;
         padding: 0.5em;
         margin: 1.5em;
@@ -118,12 +118,17 @@ main {
         margin: 2em; 
         }
 
-    
-
     .jocs{
      text-align: center;
      margin: 3em 0 3em 0;
         }
+
+    .estoc_baix{
+       border: 1em solid rgb(155, 4, 4);
+    }
+    body.dark_mode .estoc_baix{
+       border: 1em solid rgb(200, 209, 34);
+    }
 
     .descripcio {
         text-align: justify;
@@ -138,21 +143,19 @@ main {
             grid-template-columns: 7fr 7fr 5fr;
             grid-template-areas: 
             "header1 header1 header2"
-            "joc1 joc2 noticies"
-            "joc3 joc4 llancaments"
-            "joc5 joc6 llancaments"
-            "joc7 joc8 llancaments"
+            "joc joc noticies"
+            "joc joc llancaments"
+            "joc joc llancaments"
+            "joc joc llancaments"
             "peu peu peu2";
     }
-        #header1, #header2, #joc1, #joc2, #joc3, #joc4, 
-        #joc5, #joc6, #joc7, #joc8, #noticies, #llancaments, #peu, #peu2 {
+        #header1, #header2, #noticies, #llancaments, #peu, #peu2, .jocgrid{
             line-height: 2em;
             border-radius: 2em;
             padding: 1em 3em 3em 3em;
             display: block;
             overflow: auto;
-            min-width: 10%;
-            
+            min-width: 10%;   
         }
 
         #header1 {
@@ -161,31 +164,11 @@ main {
         #header2 {
             grid-area: header2;   
         }
-        #joc1 {
-            grid-area: joc1;
-           
-        }
-        #joc2 {
-            grid-area: joc2; 
-          
-        }
-        #joc3 {
-            grid-area: joc3;  
-        }
-        #joc4 {
-            grid-area: joc4;
-           }
-        #joc5 {
-            grid-area: joc5;
-        }
-        #joc6 {
-            grid-area: joc6; 
-        }
-        #joc7 {
-            grid-area: joc7;
-        }
-        #joc8 {
-            grid-area: joc8;
+        #cataleg {
+            grid-area: joc;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
         }
         #noticies {
             grid-area: noticies;
