@@ -22,7 +22,20 @@ body{
     body.dark_mode .background_2 {
         color:rgb(172, 46, 0);
         background-color:rgb(19, 19, 19); ;
+        border: 0.2em solid rgb(172, 46, 0);
     }
+
+    body.dark_mode.background_1 img, body.dark_mode.background_1 iframe{
+        box-shadow: rgb(19, 19, 19) 1em 1em;
+
+    }
+
+    body.dark_mode main .background_2 img{
+        box-shadow: rgb(172, 46, 0) 1em 1em;
+
+    }
+
+
     ul {
         list-style: none;
         line-height: 1.5em;
@@ -61,7 +74,7 @@ header {
 main {
     padding: 1em 2em 3em 2em;
 }
-    img, iframe {
+     img, iframe {
             border-radius: 1em;
             margin: 3em 1em 3em 1em;
             box-shadow: white 1em 1em;
