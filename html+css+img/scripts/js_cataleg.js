@@ -1,6 +1,6 @@
 //Part A: Cataleg dinàmic
-//Dades en arrays d'objectes
-const joc = [
+//Dades de cada joc en array d'objectes
+const jocs = [
     {   titol: "Hollow Knight",
         codi: "HK-001",
         genere:["Metroidvania"],
@@ -20,7 +20,7 @@ const joc = [
         PreusSenseIVA: 49.59,
         descompte:-20,
         valoracio: 8.9,
-        estoc:12,
+        estoc:0,
         imatge: "Img_IA/SMO.jpg",
         descripcio: "En aquest joc, el jugador controla a Mario en un entorn 3D on pot explorar diversos mons, coneguts com a regnes, per a recollir Power Moons i salvar a la Princesa Peach de Bowser, que planeja casar-se amb ella.",
 
@@ -95,27 +95,30 @@ const joc = [
 ]
 //Funció per a calcular el preu amb IVA
 const IVA= 21;
-function calculaPreuFinal (joc) {
-    return joc.PreusSenseIVA*(1+IVA/100)*(1+joc.descompte/100);
+function calculaPreuFinal (jocs) {
+    return jocs.PreusSenseIVA*(1+IVA/100)*(1+jocs.descompte/100);
 }
 
 // Funció per a la targeta
 
-function Targeta (joc) {
-    const seccioJoc= document.createElement("article");
-    seccioJoc.classList.add("background_2", "jocgrid");
+function Targeta (jocs) {
+    const seccioJoc= document.createElement("article"); //Crea un article per a cada joc
+    seccioJoc.classList.add("background_2", "jocgrid"); //Li afegeix les dues classes indicades
 
+    //Crear el títol des de l'array
     const titol= document.createElement("h2");
-    titol.textContent = joc.titol;
+    titol.textContent = jocs.titol;
     titol.classList.add("hover");
-    titol.title=joc.codi;
+    titol.title=jocs.codi;
 
+    //Crear la imatge des de l'array amb uns característiques específiques
     const img = document.createElement("img");
-    img.src = joc.imatge;
-    img.alt = `Caràtula no oficial feta per IA: ${joc.titol}`;
+    img.src = jocs.imatge;
+    img.alt = `Caràtula no oficial feta per IA: ${jocs.titol}`;
     img.width = 350;
     img.height=300;
 
+    // Creació d'una llista d'html amb les característiques del joc dins d'un element de la llista individual
     const list= document.createElement("ul");
     const genere = document.createElement("li");
     const plataformes = document.createElement ("li");
@@ -124,42 +127,56 @@ function Targeta (joc) {
     const estoc= document.createElement("li");
     const descripcio = document.createElement("li");
 
-    genere.textContent = `Gèneres: ${joc.genere.join(", ")}`;
-    plataformes.textContent= `Plataformes: ${joc.plataforma.join(", ")}`;
-    preu.textContent= `Preu descomptat (${joc.descompte} %) amb IVA (+ ${IVA} %): ${calculaPreuFinal(joc).toFixed(2)} €`;
-    valoracio.textContent = `Valoració: ${joc.valoracio}`;
-    estoc.textContent = `Unitats en estoc: ${joc.estoc}`;   
-    descripcio.textContent = `Descripció: ${joc.descripcio}`;
+    //Assignació del contingut de cada element de la llista segons el contingut del array
+    genere.textContent = `Gèneres: ${jocs.genere.join(", ")}`;
+    plataformes.textContent= `Plataformes: ${jocs.plataforma.join(", ")}`;
+    preu.textContent= `Preu descomptat (${jocs.descompte} %) amb IVA (+ ${IVA} %): ${calculaPreuFinal(jocs).toFixed(2)} €`;
+    valoracio.textContent = `Valoració: ${jocs.valoracio}`;  
+    descripcio.textContent = `Descripció: ${jocs.descripcio}`;
 
+    /* Assignació de titles (textos emergents) la class hover 
+    (assignada a una pseucdoclasse hover que resalta el text amb el cursor) als elements de la llista indicats*/
     valoracio.title="Valoració d'usuaris";
     valoracio.classList.add("hover");
 
     estoc.classList.add("hovers");
     estoc.title="Unitats de 1a mà";
 
-    list.append(genere, plataformes, preu, valoracio, descripcio);
+    //inserció dels elements de la llista dins d'aquesta
+    list.append(genere, plataformes, preu, valoracio, estoc, descripcio);
    
+   // Creació d'un text de pantalla de compra que redigireix a l'usuari a l'html d'error
     const compraMissatge= document.createElement("p");
-    compraMissatge.textContent="Consulta'm"
-
-    const enllaçCompra= document.createElement("a");
-    enllaçCompra.href="Error.html";
+    const linkCompra= document.createElement("a");
+    linkCompra.textContent="Consulta'm"
+    linkCompra.href="Error.html";
     
-    compraMissatge.appendChild(enllaçCompra);
+    // Fusió del text i el seu enllaç
+    compraMissatge.appendChild(linkCompra);
     
+    /*Definició del compotament dinàmic de la targeta segons si l'estoc és menor a 5 o igual a 0 
+     a la qual se li assigna una classe que resalta el contorn del contenidor i un modificador de text*/
 
-    if (joc.estoc<=5 && joc.estoc>0) {
+    if (jocs.estoc<5 && jocs.estoc>=0) {
        seccioJoc.classList.add("estoc_baix");   
+    
+         if (jocs.estoc===0) {
+        const negreta=document.createElement("strong");
+        negreta.textContent="Estoc esgotat";
+        estoc.appendChild(negreta);
+        }
     }
-    else if (joc.estoc===0){
-        estoc.textContent="Estoc esgotat";
+    else {
+        estoc.textContent = `Unitats en estoc: ${jocs.estoc}`; 
     }
 
+    //Fusió de tots els elements creats amb l'article del joc
     seccioJoc.append(titol, img, list, compraMissatge);
 
         return seccioJoc;
 }
 
+// Funció que crea visualment el cataleg dins de l'espai buit al grid d'index.html
 function ferCatalog(llista) {
     const contenidor =document.querySelector("#cataleg");
     contenidor.textContent="";
@@ -168,6 +185,35 @@ function ferCatalog(llista) {
     });
 }
 
-ferCatalog(joc);
+ferCatalog(jocs); //Activa la funció per crear visualment la llista
 
 // Part B-Filtre de catàleg
+
+const cercadorTitol = document.querySelector("#cercaTitol");
+const cercadorPlataforma = document.querySelector("#cercaPlataformes");
+const resultat = document.querySelector("#resultats");
+
+function filtra() {
+    const titolText= cercadorTitol.value.trim().toLowerCase();
+    const plataformaSelect= cercadorPlataforma.value;
+
+    const filtre = jocs.filter ((jocs) => {
+        const titolCheck= jocs.titol.toLowerCase().includes(titolText);
+        const plataformaCheck= plataformaSelect === "Totes" || jocs.plataforma.includes(plataformaSelect);
+        return titolCheck && plataformaCheck;
+    });
+    
+    
+    ferCatalog(filtre);
+    resultat.textContent = `Mostrant ${filtre.length} jocs de ${jocs.length}`;
+
+    if (filtre.length===0){
+        resultat.textContent =`No s'ha trobat cap joc`;
+
+    }
+}   
+
+cercadorTitol.addEventListener("input", filtra);
+cercadorPlataforma.addEventListener("change", filtra);
+
+filtra();

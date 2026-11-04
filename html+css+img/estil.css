@@ -19,7 +19,8 @@ body{
         background-color: rgb(172, 46, 0);
     }
 
-    body.dark_mode .background_2, body.dark_mode .background_2 td   {
+    body.dark_mode .background_2, body.dark_mode .background_2 td, body.dark_mode .background_2 th, 
+    body.dark_mode .background_2 input, body.dark_mode .background_2 select  {
         color:rgb(172, 46, 0);
         background-color:rgb(19, 19, 19); ;
         border: 0.2em solid rgb(172, 46, 0);
@@ -43,13 +44,12 @@ body{
         text-align: left;
         }
          .nav { 
-        margin: 0.5em auto 0.5em auto;
+        margin: 0.5em 2em 0.5em 2em;
         display: flex;
         justify-content:center;
         align-items: center;
         gap: 2em;
         padding: 1em;
-        width: 100%;
         }
 
     h1, .inici {
@@ -59,7 +59,7 @@ body{
         line-height: 1em;
     }
 
-    table, th, tr, td, form, input,caption, button {
+    table, th, tr, td, section form, input, caption, button {
         border-radius: 2em;
         padding: 0.5em;
         margin: 1.5em;
@@ -67,53 +67,56 @@ body{
     }
 
     header {
-    text-align: center;
-    border-bottom-left-radius: 4em;
-    border-bottom-right-radius: 4em;
-    width: 100%;
-    padding: 4em 0 2em 0;
-    margin-bottom: 3em;
+        text-align: center;
+        border-bottom-left-radius: 4em;
+        border-bottom-right-radius: 4em;
+        width: 100%;
+        padding: 4em 0 2em 0;
+        margin: 0 0 3em 0;
     }
 
     main {
-    padding: 1em 2em 3em 2em;   
+        padding: 1em 2em 3em 2em;   
     }
 
     img, iframe {
-            border-radius: 1em;
-            margin: 3em 1em 3em 1em;
-            box-shadow: white 1em 1em;
+        border-radius: 1em;
+        margin: 3em 1em 3em 1em;
+        box-shadow: white 1em 1em;
     }
 
     div article img, ul img {
         box-shadow: coral 1em 1em;
     }
 
-    table {
-            
-            table-layout:auto;
-            border-collapse: collapse;
-            width: 100%;
-             }
+    table  {     
+        table-layout:auto;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-    form {
+    section form {
         width: 50%;
         margin-left: auto;
         margin-right: auto;
     }
-  
-    .hover:hover{
+    
+    form #Cerca {
+        width: 70%;
+    }
+
+    .hover:hover, body.dark_mode.background_1 .hover:hover {
         color: blueviolet;
     }
 
 
     .doubleflexbox{
-    flex-direction: row;
-    flex-wrap: wrap;
-    display:inline-flex;
-    justify-content:space-around;
-    align-items: center;
-    width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        display:inline-flex;
+        justify-content:space-around;
+        align-items: center;
+        width: 100%;
     }
 
     .flexboxdiv{
@@ -121,19 +124,16 @@ body{
         display: block;
         max-width: 100%;
         min-width: 0;
-        margin: 2em; 
+        margin: 2em 2em 0 0; 
         }
 
     .jocs{
-     text-align: center;
-     margin: 3em 0 3em 0;
-        }
-
-    .estoc_baix{
-       border: 1em solid rgb(155, 4, 4);
+        text-align: center;
+        margin: 3em 0 3em 0;
     }
-    body.dark_mode .estoc_baix{
-       border: 1em solid rgb(200, 209, 34);
+
+    .estoc_baix,  body.dark_mode .estoc_baix{
+       border: 1em solid rgb(70, 0, 60);
     }
 
     .descripcio {
@@ -142,24 +142,25 @@ body{
         margin: 2em 3em 2em 3em;
         border-radius: 3em;
      }
+
     #grid {
-            display: grid;
-            margin: 3em 1em 1em 3em;
-            grid-gap: 2em;
-            grid-template-columns: 7fr 7fr 5fr;
-            grid-template-areas: 
-            "header1 header1 header1"
-            "cerca_titol cerca_plataforma cerca_plataforma"
-            "joc joc noticies"
-            "joc joc llancaments"
-            "joc joc llancaments"
-            "joc joc llancaments"
-            "peu peu peu2";
+        display: grid;
+        margin: 1em 1em 1em 1em;
+        grid-gap: 2em;
+        grid-template-columns: 7fr 7fr 5fr;
+        grid-template-areas: 
+        "header1 header1 header1"
+        "cerca cerca cerca"
+        "joc joc noticies"
+        "joc joc llancaments"
+        "joc joc llancaments"
+        "joc joc llancaments"
+        "peu peu peu2";
     }
-        #header1, #noticies, #llancaments, #peu, #peu2, #cerca_titol, #cerca_plataforma, .jocgrid{
+        #header1, #noticies, #llancaments, #peu, #peu2, #cerca, .jocgrid{
             line-height: 2em;
             border-radius: 2em;
-            padding: 1em 3em 3em 3em;
+            padding: 1em 2em 1em 2em;
             display: block;
             overflow: auto;
             min-width: 10%;   
@@ -168,12 +169,10 @@ body{
         #header1 {
             grid-area: header1;
         }
-        #cerca_titol{
-            grid-area: cerca_titol;
+        #cerca{
+            grid-area: cerca;
         }
-        #cerca_plataforma{
-            grid-area: cerca_plataforma;
-        }
+        
         #header2 {
             grid-area: header2;   
         }
@@ -209,7 +208,6 @@ body{
         h1, .inici {font-size: 3.5em;
             overflow-wrap: break-word;
         }
-
     }  
     
     .bottom {

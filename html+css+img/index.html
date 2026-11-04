@@ -110,51 +110,28 @@
                      </p>
                 </section>
 
-                <section id="cerca_titol" class="background_2">
-                    <h3> Filtre del catàleg</h3>
-                    <p> Filtra els jocs segons els teus criteris preferits.</p>
-                    <form>
-                        <label for="idbuscador"> <strong> Introdueix aquí el títol del joc </strong> </label>
-                        <input type="text" id="idbuscador" placeholder="Ex: Hollow Knight" name="idbuscador">
-                    </form>
-                </section>
-
-                <form id="cerca_plataforma" class="background_2">
-                         <p> <strong> Selecciona la plataforma a filtrar</strong></p>
+                    <form id="cerca" class="background_2"> 
+                         <h3> Filtratge de jocs</h3>
                         <ul class="nav">
                             <li>
-                            <label for="idTotes"> <strong> Totes les plataformes </strong> </label>
-                                <input type="checkbox" id="idTotes" name="Plataformes" value="Totes"> <br>
+                                <label for="cercaTitol"> <strong> Introdueix aquí el títol del joc </strong> </label>
+                                    <input type="text" id="cercaTitol" placeholder="Ex: Hollow Knight" name="cercaTitol">
                             </li>
                             <li>
-                            <label for="idNintendo_Switch"> <strong> Nintendo Switch </strong> </label>
-                                <input type="checkbox" id="idNintendo_Switch" name="Plataformes" value="Nintendo Switch 1"> <br>
-                            </li>
-                            <li>
-                            <label for="idNintendo_Switch2"> <strong> Nintendo Switch 2 </strong> </label>
-                                <input type="checkbox" id="idNintendo_Switch2" name="Plataformes" value="Nintendo Switch 2"> <br>
-                            </li>
-                            <li>
-                            <label for="idWiiU"> <strong> Wii U </strong> </label>
-                                <input type="checkbox" id="idWiiU" name="Plataformes" value="Wii U"> <br>
-                            </li>
-                            <li>
-                            <label for="idPs4"> <strong> PlayStation 4 </strong> </label>
-                                <input type="checkbox" id="idPs4" name="Plataformes" value="Ps4"> <br>
-                            </li>
-                            <li>
-                            <label for="idPs5"> <strong> PlayStation 5 </strong> </label>
-                                <input type="checkbox" id="idPs5" name="Plataformes" value="Ps5"> <br>
-                            </li>
-                            <li>
-                            <label for="idXbox_One"> <strong> Xbox One </strong> </label>
-                                <input type="checkbox" id="idXbox_One" name="Plataformes" value="Xbox One"> <br>
-                            </li>
-                            <li>
-                            <label for="idPC"> <strong> PC </strong> </label>
-                                <input type="checkbox" id="idPC" name="Plataformes" value="PC"> <br><br>
+                                <label for="cercaPlataformes"><strong> Selecciona la plataforma  </strong></label>
+                                <select id="cercaPlataformes" name="cercaPlataformes">
+                                    <option value="Totes">Totes</option>
+                                    <option value="Ps5">Ps5</option>
+                                    <option value="Ps4">Ps4</option>
+                                    <option value="Nintendo Switch 1"> Nintendo Switch 1</option>
+                                    <option value="Nintendo Switch 2"> Nintento Switch 2</option>
+                                    <option value="Wii U"> Wii U</option>
+                                    <option value="Xbox One"> Xbox one</option>
+                                    <option value="PC"> PC</option>
+                                </select>
                             </li>
                         </ul>
+                        <p id="resultats"></p> <!--On es motra el missatge del filte de javascript-->
                     </form>
 
                 <div id="cataleg"> </div> <!-- Aquí és on es creen les targetes de cada joc-->
