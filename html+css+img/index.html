@@ -101,6 +101,7 @@
                 </table>
            </section>
             </div>
+            
            <div id="grid">
                 <section id="header1"> 
                     <h2> Jocs destacats</h2>
@@ -108,16 +109,59 @@
                     A més, no et perdis les INCREÏBLES ofertes d'aquests jocs amb motiu de ser el mes previ a la febre de GTA VI i The Legend of Zelda Ocarina of Time Remake!
                      </p>
                 </section>
-                <div id="cataleg"> </div>
+
+                <section id="cerca_titol" class="background_2">
+                    <h3> Filtre del catàleg</h3>
+                    <p> Filtra els jocs segons els teus criteris preferits.</p>
+                    <form>
+                        <label for="idbuscador"> <strong> Introdueix aquí el títol del joc </strong> </label>
+                        <input type="text" id="idbuscador" placeholder="Ex: Hollow Knight" name="idbuscador">
+                    </form>
+                </section>
+
+                <form id="cerca_plataforma" class="background_2">
+                         <p> <strong> Selecciona la plataforma a filtrar</strong></p>
+                        <ul class="nav">
+                            <li>
+                            <label for="idTotes"> <strong> Totes les plataformes </strong> </label>
+                                <input type="checkbox" id="idTotes" name="Plataformes" value="Totes"> <br>
+                            </li>
+                            <li>
+                            <label for="idNintendo_Switch"> <strong> Nintendo Switch </strong> </label>
+                                <input type="checkbox" id="idNintendo_Switch" name="Plataformes" value="Nintendo Switch 1"> <br>
+                            </li>
+                            <li>
+                            <label for="idNintendo_Switch2"> <strong> Nintendo Switch 2 </strong> </label>
+                                <input type="checkbox" id="idNintendo_Switch2" name="Plataformes" value="Nintendo Switch 2"> <br>
+                            </li>
+                            <li>
+                            <label for="idWiiU"> <strong> Wii U </strong> </label>
+                                <input type="checkbox" id="idWiiU" name="Plataformes" value="Wii U"> <br>
+                            </li>
+                            <li>
+                            <label for="idPs4"> <strong> PlayStation 4 </strong> </label>
+                                <input type="checkbox" id="idPs4" name="Plataformes" value="Ps4"> <br>
+                            </li>
+                            <li>
+                            <label for="idPs5"> <strong> PlayStation 5 </strong> </label>
+                                <input type="checkbox" id="idPs5" name="Plataformes" value="Ps5"> <br>
+                            </li>
+                            <li>
+                            <label for="idXbox_One"> <strong> Xbox One </strong> </label>
+                                <input type="checkbox" id="idXbox_One" name="Plataformes" value="Xbox One"> <br>
+                            </li>
+                            <li>
+                            <label for="idPC"> <strong> PC </strong> </label>
+                                <input type="checkbox" id="idPC" name="Plataformes" value="PC"> <br><br>
+                            </li>
+                        </ul>
+                    </form>
+
+                <div id="cataleg"> </div> <!-- Aquí és on es creen les targetes de cada joc-->
                 <footer id="peu"> 
                     <p> Totes les ofertes estaran disponibles fins a la sortida de GTA VI al 19 de novembre.</p>
                 </footer>
-
-                <aside id="header2">
-                    <h2>Extres</h2>
-                    <p>Explora les constants actualitzacions de la nostra botiga.
-                    </p>
-                </aside>
+                
                 <aside class="background_2" id="noticies">
                     <h3 > Notícies de la botiga</h3>
                     <ul>

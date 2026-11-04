@@ -49,6 +49,7 @@ body{
         align-items: center;
         gap: 2em;
         padding: 1em;
+        width: 100%;
         }
 
     h1, .inici {
@@ -57,31 +58,37 @@ body{
         letter-spacing: 0.2em;
         line-height: 1em;
     }
+
     table, th, tr, td, form, input,caption, button {
         border-radius: 2em;
         padding: 0.5em;
         margin: 1.5em;
         border:0.2em solid coral;
     }
-header {
+
+    header {
     text-align: center;
     border-bottom-left-radius: 4em;
     border-bottom-right-radius: 4em;
     width: 100%;
     padding: 4em 0 2em 0;
     margin-bottom: 3em;
-}
-main {
-    padding: 1em 2em 3em 2em;
-}
-     img, iframe {
+    }
+
+    main {
+    padding: 1em 2em 3em 2em;   
+    }
+
+    img, iframe {
             border-radius: 1em;
             margin: 3em 1em 3em 1em;
             box-shadow: white 1em 1em;
-        }
+    }
+
     div article img, ul img {
         box-shadow: coral 1em 1em;
     }
+
     table {
             
             table-layout:auto;
@@ -100,15 +107,14 @@ main {
     }
 
 
-        .doubleflexbox{
-       
-        flex-direction: row;
-        flex-wrap: wrap;
-        display:inline-flex;
-        justify-content:space-around;
-        align-items: center;
-        width: 100%;
-        }
+    .doubleflexbox{
+    flex-direction: row;
+    flex-wrap: wrap;
+    display:inline-flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 100%;
+    }
 
     .flexboxdiv{
         flex: 1 1 320px;
@@ -142,14 +148,15 @@ main {
             grid-gap: 2em;
             grid-template-columns: 7fr 7fr 5fr;
             grid-template-areas: 
-            "header1 header1 header2"
+            "header1 header1 header1"
+            "cerca_titol cerca_plataforma cerca_plataforma"
             "joc joc noticies"
             "joc joc llancaments"
             "joc joc llancaments"
             "joc joc llancaments"
             "peu peu peu2";
     }
-        #header1, #header2, #noticies, #llancaments, #peu, #peu2, .jocgrid{
+        #header1, #noticies, #llancaments, #peu, #peu2, #cerca_titol, #cerca_plataforma, .jocgrid{
             line-height: 2em;
             border-radius: 2em;
             padding: 1em 3em 3em 3em;
@@ -160,6 +167,12 @@ main {
 
         #header1 {
             grid-area: header1;
+        }
+        #cerca_titol{
+            grid-area: cerca_titol;
+        }
+        #cerca_plataforma{
+            grid-area: cerca_plataforma;
         }
         #header2 {
             grid-area: header2;   

@@ -5,7 +5,7 @@ const joc = [
         codi: "HK-001",
         genere:["Metroidvania"],
         plataforma: ["Ps5","Ps4", "Nintendo Switch 1", "Nintendo Switch 2", "PC", "Xbox One"],
-        PreusSenseIVA: 11.85,
+        PreusSenseIVA: 12.4,
         descompte: -33,
         valoracio: 9.0,
         estoc:36,
@@ -17,7 +17,7 @@ const joc = [
         codi: "SMO-001",
         genere:["Plataformes", "Aventura", "Collect-a-thon"],
         plataforma: ["Nintendo Switch 1", "Nintendo Switch 2"],
-        PreusSenseIVA: 47.4,
+        PreusSenseIVA: 49.59,
         descompte:-20,
         valoracio: 8.9,
         estoc:12,
@@ -29,7 +29,7 @@ const joc = [
         codi: "BTOW-001",
         genere:["Món obert", "Aventura", "Acció"],
         plataforma: ["Nintendo Switch 1", "Nintendo Switch 2","Wii U"],
-        PreusSenseIVA: 55.3,
+        PreusSenseIVA: 57.85,
         descompte:-25,
         valoracio: 9.0,
         estoc:5,
@@ -41,7 +41,7 @@ const joc = [
         codi: "GW-001",
         genere:["Acció", "Aventura", "Hack and Slash"],
         plataforma: ["Ps4", "PC"],
-        PreusSenseIVA: 20,
+        PreusSenseIVA: 16.53,
         descompte:-10,
         valoracio: 9.0,
         estoc:8,
@@ -63,7 +63,7 @@ const joc = [
         codi: "COE33-001",    
         genere:["JRPG", "Acció per torns"],
         plataforma: ["Ps5", "Xbox One", "PC"],
-        PreusSenseIVA: 47.4,
+        PreusSenseIVA: 49.59,
         descompte:-33,
         valoracio: 9.4,
         estoc:10,
@@ -74,7 +74,7 @@ const joc = [
         codi:"ER-001",
         genere:["Món obert", "Souls", "Acció", "Aventura"],
         plataforma: ["Ps5", "Ps4", "PC", "Nintendo Switch 2", "Xbox One"],
-        PreusSenseIVA: 47.4,
+        PreusSenseIVA: 49.59,
         descompte: -20,
         valoracio: 8.4,
         estoc:25,
@@ -85,7 +85,7 @@ const joc = [
         codi: "RER-001",
         genere:["Survival Horror", "Shooter"],
         plataforma: ["Ps5", "PC", "Nintendo Switch 2", "Xbox One"],
-        PreusSenseIVA: 55.3,
+        PreusSenseIVA: 57.85,
         descompte: -15,
         valoracio: 9.3,
         estoc:15,
@@ -134,7 +134,7 @@ function Targeta (joc) {
     valoracio.title="Valoració d'usuaris";
     valoracio.classList.add("hover");
 
-    estoc.classList.add("hover");
+    estoc.classList.add("hovers");
     estoc.title="Unitats de 1a mà";
 
     list.append(genere, plataformes, preu, valoracio, descripcio);
@@ -169,3 +169,5 @@ function ferCatalog(llista) {
 }
 
 ferCatalog(joc);
+
+// Part B-Filtre de catàleg
