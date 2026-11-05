@@ -20,7 +20,7 @@ body{
     }
 
     body.dark_mode .background_2, body.dark_mode .background_2 td, body.dark_mode .background_2 th, 
-    body.dark_mode .background_2 input, body.dark_mode .background_2 select  {
+    body.dark_mode .background_2 input,body.dark_mode .background_2 textarea, body.dark_mode .background_2 select  {
         color:rgb(172, 46, 0);
         background-color:rgb(19, 19, 19); ;
         border: 0.2em solid rgb(172, 46, 0);
@@ -59,12 +59,18 @@ body{
         line-height: 1em;
     }
 
-    table, th, tr, td, section form, input, caption, button {
+    table, th, tr, td, form, input, textarea, select, caption, button {
+        
         border-radius: 2em;
         padding: 0.5em;
-        margin: 1.5em;
+        margin: 0.5em;
         border:0.2em solid coral;
     }
+
+    form, input, textarea, select{
+        width: 80%;
+    }
+
 
     header {
         text-align: center;
@@ -96,13 +102,9 @@ body{
     }
 
     section form {
-        width: 50%;
+        width: 70%;
         margin-left: auto;
         margin-right: auto;
-    }
-    
-    form #Cerca {
-        width: 70%;
     }
 
     .hover:hover, body.dark_mode.background_1 .hover:hover {
@@ -117,6 +119,7 @@ body{
         justify-content:space-around;
         align-items: center;
         width: 100%;
+        flex-wrap: wrap;
     }
 
     .flexboxdiv{
@@ -198,12 +201,20 @@ body{
         #grid { grid-template-columns: 1fr; 
             grid-template-areas: none; }
 
-        #grid > * { grid-area: auto; }
-
+        #grid > * { grid-area: auto; flex-wrap: wrap; }
+        
         img, iframe {
             max-width: 100%;
              height: auto;
             }
+        
+        #cataleg{
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 16em), 1fr));
+        }
+        
+        form {
+            width: 85% !important;
+        }
 
         h1, .inici {font-size: 3.5em;
             overflow-wrap: break-word;

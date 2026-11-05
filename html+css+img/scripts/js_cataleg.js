@@ -189,23 +189,25 @@ ferCatalog(jocs); //Activa la funció per crear visualment la llista
 
 // Part B-Filtre de catàleg
 
-const cercadorTitol = document.querySelector("#cercaTitol");
-const cercadorPlataforma = document.querySelector("#cercaPlataformes");
-const resultat = document.querySelector("#resultats");
+const cercadorTitol = document.querySelector("#cercaTitol"); //selecciona l'input de camp de text per a filtrar jocs pel titol
+const cercadorPlataforma = document.querySelector("#cercaPlataformes"); //selecciona el select per a indicar la paltaforma
+const resultat = document.querySelector("#resultats"); //selecciona el camp de text on s'indica el número total de jocs mostrats pel filtre
 
-function filtra() {
-    const titolText= cercadorTitol.value.trim().toLowerCase();
-    const plataformaSelect= cercadorPlataforma.value;
+function filtra() { //Funció per filtrar els jocs
+    const titolText= cercadorTitol.value.trim().toLowerCase(); //el valor introduït al camp de text passa a no tenir espais i a estar en majúscules internament
+    const plataformaSelect= cercadorPlataforma.value; //la opció del selector
 
-    const filtre = jocs.filter ((jocs) => {
-        const titolCheck= jocs.titol.toLowerCase().includes(titolText);
-        const plataformaCheck= plataformaSelect === "Totes" || jocs.plataforma.includes(plataformaSelect);
-        return titolCheck && plataformaCheck;
+    const filtre = jocs.filter ((jocs) => { // Arrowfunction per a comparar el contingut del filtre amb el dels jocs
+        const titolCheck= jocs.titol.toLowerCase().includes(titolText); //compara el titol de cada joc amb el contingut del filtre de text
+        const plataformaCheck= plataformaSelect === "Totes" || jocs.plataforma.includes(plataformaSelect); /*comprova si s'ha seleccionat l'opció de totes o 
+        si el joc conté alguna plataforma igual a la seleccionada */
+        return titolCheck && plataformaCheck; 
     });
     
     
-    ferCatalog(filtre);
-    resultat.textContent = `Mostrant ${filtre.length} jocs de ${jocs.length}`;
+    ferCatalog(filtre); // pinta una targeta si el filtre dona true
+
+    resultat.textContent = `Mostrant ${filtre.length} jocs de ${jocs.length}`; 
 
     if (filtre.length===0){
         resultat.textContent =`No s'ha trobat cap joc`;
@@ -213,6 +215,7 @@ function filtra() {
     }
 }   
 
+//Acualitza en temps real els dos selectors
 cercadorTitol.addEventListener("input", filtra);
 cercadorPlataforma.addEventListener("change", filtra);
 

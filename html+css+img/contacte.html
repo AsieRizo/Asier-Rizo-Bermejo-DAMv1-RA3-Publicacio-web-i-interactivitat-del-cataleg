@@ -44,6 +44,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
         <script src="scripts/js_tema.js" defer></script>
         <script src="scripts/js_contacte.js" defer></script>
+        
     </head>
     <body class="background_1">
         <header class="background_2">
@@ -72,30 +73,30 @@
                      Farem noves ofertes en les pròximes setmanes? <br> Pregunta el que vulguis! El nostre equip et respondrà ben aviat per email </p>
                      <!--Nota: el formulari no s'envia a cap lloc-->
                <section>
-                 <form class="background_2" method="post">
-                    <label for="idnom"> <strong> Nom complert: </strong><br> </label>
-                        <input type="text" id="idnom" required placeholder="Nom + Cognom 1 + Cognom 2" name="idnom"> <br><br>
-                    <label for="idcorreu"> <strong>Correu electrònic </strong> <br> </label>
-                        <input type="email" id="idcorreu" required placeholder="correu@gmail.com"><br><br>
-                    <label for="iddata"> <strong>Data de la consulta </strong><br> </label>
-                        <input type="date" required id="iddata"> <br>
-                    <p> <strong> Motiu de la consulta </strong></p>
-                        <label for="idBotiga"> Demanar informació sobre la botiga </label>
-                            <input type="radio" id="idBotiga" name="Consulta" value="Botiga" required> <br><br>
-                        <label for="idJoc"> Demanar informació sobre algun joc publicat o de pròxim llançament </label> 
-                            <input type="radio" id="idJoc" name="Consulta" value="Joc"> <br><br>
-                        <label for="idReclamacio"> Posar una reclamació </label>
-                            <input type="radio" id="idReclamacio" name="Consulta" value="Reclamació"> <br><br>
-                        <label for="idresenya"> Posar una resenya a la botiga </label>
-                            <input type="radio" id="idresenya" name="Consulta" value="Resenya"> <br><br>
-                        <label for="idaltres"> Altres motius (indica-ho al teu comentari) </label>
-                            <input type="radio" id="idaltres" name="Consulta" value="Altres"> <br><br>
-                    <label for="idtext"> <strong> Deixa aquí el teu comentari <br> </strong></label>
-                        <input type="text" id="idtext" required placeholder="Comentari"> <br> <br>
-                    <label for="idpunts"> <strong> Vols deixar-nos també la teva valoració del nostre servei? (1 a 10) </strong> <br></label>
-                    <input type="range" id="idpunts" min="0" max="10" step="1"><br><br>
-                    <input type="reset" value="Borra TOTA la teva selecció"> <br><br>
-                    <input type="submit" value="Envia la teva consulta"><br><br>
+                 <form class="background_2 form" method="post" novalidate>
+                    <label for="idnom"> <strong> Nom complert </strong> </label>
+                        <label class="llarginput"> </label> <br>
+                        <input class= "textinput" type="text" id="idnom" placeholder="Nom + Cognom 1 + Cognom 2" name="idnom"><br><br>
+                    <label for="idcorreu"> <strong>Correu electrònic </strong>  </label>
+                         <label class="errorgmail"></label><br>
+                        <input class ="gmailinput" type="email" id="idcorreu" placeholder="correu@gmail.com"><br><br>
+                    <label for="iddata"> <strong>Data de la consulta </strong> </label>
+                        <input type="date" id="iddata"> <br><br>
+                    <label for="motius"> <strong> Motiu de la consulta </strong></label>
+                        <select id="motius" name="motius">
+                            <option value="infoBotiga"> Demanar informació sobre la botiga </option>
+                            <option value="infoJoc"> Demanar informació sobre algun joc publicat o de pròxim llançament</option>
+                            <option value="reclamacio">Posar una reclamació</option>
+                            <option value="ressenya">Posar una resenya a la botiga</option>
+                            <option value="altres">Altres motius (indica-ho al teu comentari)</option>
+                        </select><br><br>
+                    <textarea class="textarea" id="textarea" rows="5" cols="50" placeholder="Comentari"></textarea><br>
+                        <label class="llargtext"></label>
+                    <label class="numinput" for="idpunts"> <strong> Valoració servei 1-10 (opcional) </strong> <br></label>
+                        <label class="errornum"></label><br>
+                        <input type="number" id="idpunts"><br><br>
+                    <input class="reset" type="reset" value="Borra TOTA la teva selecció"> <br><br>
+                    <input class="submit" type="submit" value="Envia la teva consulta"><br><br>
                 </form>
             </section>
         </main>
