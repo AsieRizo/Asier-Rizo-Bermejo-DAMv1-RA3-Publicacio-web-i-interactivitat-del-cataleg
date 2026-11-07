@@ -10,7 +10,7 @@ body{
         background-color: coral;
     }
 
-    .background_2{
+    .background_2, .background_2 input {
         color:coral;
         background-color:white;
     }
@@ -20,7 +20,8 @@ body{
     }
 
     body.dark_mode .background_2, body.dark_mode .background_2 td, body.dark_mode .background_2 th, 
-    body.dark_mode .background_2 input,body.dark_mode .background_2 textarea, body.dark_mode .background_2 select  {
+    body.dark_mode .background_2 input,body.dark_mode .background_2 textarea, body.dark_mode .background_2 select,
+    body.dark_mode .background_2 button {
         color:rgb(172, 46, 0);
         background-color:rgb(19, 19, 19); ;
         border: 0.2em solid rgb(172, 46, 0);
@@ -59,7 +60,7 @@ body{
         line-height: 1em;
     }
 
-    table, th, tr, td, form, input, textarea, select, caption, button {
+    table, th, tr, td, form, input, textarea, select, caption, button, .contenidor {
         
         border-radius: 2em;
         padding: 0.5em;
@@ -68,7 +69,7 @@ body{
     }
 
     form, input, textarea, select{
-        width: 80%;
+        width: 50%;
     }
 
 
@@ -101,12 +102,19 @@ body{
         width: 100%;
     }
 
-    section form {
+    section form, .contenidor {
         width: 70%;
         margin-left: auto;
         margin-right: auto;
     }
 
+     button.hover:hover, input.hover:hover,
+      body.dark_mode.background_1 button.hover:hover,
+       body.dark_mode.background_1 input.hover:hover {
+        background-color: blueviolet;
+        color:coral;
+    }
+    
     .hover:hover, body.dark_mode.background_1 .hover:hover {
         color: blueviolet;
     }
@@ -146,6 +154,10 @@ body{
         border-radius: 3em;
      }
 
+     .errorformat, body.dark_mode.background_1 .errorformat{
+        color:red;
+     }
+
     #grid {
         display: grid;
         margin: 1em 1em 1em 1em;
@@ -174,6 +186,7 @@ body{
         }
         #cerca{
             grid-area: cerca;
+            margin: auto;
         }
         
         #header2 {

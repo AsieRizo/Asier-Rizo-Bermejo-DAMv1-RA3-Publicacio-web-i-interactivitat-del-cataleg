@@ -95,9 +95,7 @@ const jocs = [
 ]
 //Funció per a calcular el preu amb IVA
 const IVA= 21;
-function calculaPreuFinal (jocs) {
-    return jocs.PreusSenseIVA*(1+IVA/100)*(1+jocs.descompte/100);
-}
+const calculaPreuFinal = (jocs) => jocs.PreusSenseIVA*(1+IVA/100)*(1+jocs.descompte/100);
 
 // Funció per a la targeta
 
@@ -105,7 +103,7 @@ function Targeta (jocs) {
     const seccioJoc= document.createElement("article"); //Crea un article per a cada joc
     seccioJoc.classList.add("background_2", "jocgrid"); //Li afegeix les dues classes indicades
 
-    //Crear el títol des de l'array
+    //Crear el títol des de l'array i se li assignen atributs específics
     const titol= document.createElement("h2");
     titol.textContent = jocs.titol;
     titol.classList.add("hover");
@@ -139,20 +137,17 @@ function Targeta (jocs) {
     valoracio.title="Valoració d'usuaris";
     valoracio.classList.add("hover");
 
-    estoc.classList.add("hovers");
+    estoc.classList.add("hover");
     estoc.title="Unitats de 1a mà";
 
     //inserció dels elements de la llista dins d'aquesta
     list.append(genere, plataformes, preu, valoracio, estoc, descripcio);
    
-   // Creació d'un text de pantalla de compra que redigireix a l'usuari a l'html d'error
-    const compraMissatge= document.createElement("p");
-    const linkCompra= document.createElement("a");
-    linkCompra.textContent="Consulta'm"
-    linkCompra.href="Error.html";
-    
-    // Fusió del text i el seu enllaç
-    compraMissatge.appendChild(linkCompra);
+   // Creació d'un botó de compra
+    const consulta= document.createElement("button");
+    consulta.textContent="Consulta'm";
+    consulta.classList.add("hover");
+    consulta.classList.add("errorhtml");
     
     /*Definició del compotament dinàmic de la targeta segons si l'estoc és menor a 5 o igual a 0 
      a la qual se li assigna una classe que resalta el contorn del contenidor i un modificador de text*/
@@ -171,7 +166,7 @@ function Targeta (jocs) {
     }
 
     //Fusió de tots els elements creats amb l'article del joc
-    seccioJoc.append(titol, img, list, compraMissatge);
+    seccioJoc.append(titol, img, list, consulta);
 
         return seccioJoc;
 }
@@ -180,7 +175,7 @@ function Targeta (jocs) {
 function ferCatalog(llista) {
     const contenidor =document.querySelector("#cataleg");
     contenidor.textContent="";
-    llista.forEach((joc) => {
+    llista.forEach((joc) => { //Selecciona l'array corresponent i per a cada element d'aquest truca a la funció de crear targeta
         contenidor.appendChild(Targeta(joc));
     });
 }

@@ -44,6 +44,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
         <script src="scripts/js_tema.js" defer></script>
         <script src="scripts/js_contacte.js" defer></script>
+
     </head>
     <body class="background_1">
         <header class="background_2">
@@ -123,8 +124,8 @@
                 bellament única i estranya, plena de noves criatures i personatges. Agafa les vistes i descobreix noves meravelles amagades del camí batut. Si t'agrada la
                 jugabilitat clàssica, personatges bonics però esgarrifosos, aventura èpica i mons bells i gòtics, llavors Hollow Knight espera! </p>
             </article>
-            <section class="compra">
-                <h2><a href="Error.html">Anar a la pantalla de compra </a></h2>
+            <section>
+                <button class="hover background_2 errorhtml">Anar a la pantalla de compra</button>
             </section>
             <article>
                 <h2> Imatges del joc </h2>
@@ -142,21 +143,28 @@
             <section class="flexboxdiv">
                 <h3> Vols deixar una ressenya de Hollow Knight per amor a l'art?</h3>
                 <!--Nota: el formulari no s'envia a cap lloc-->
-                <form class="background_2 form" method="get" novalidate>
-                   <label for="idpuntsHK"> <strong> Escolleix una puntuació </strong></label>
-                        <input type="range" id="idpuntsHK" min="0" max="10" step="1"> <br><br>
-                    <label for="idhora"> <strong> Introdueix el número d'hores jugades <br> </strong></label>
-                        <input type="number" id="idhora" required placeholder="Número (h)"> <br> <br>
-                    <label for="idcoment"> <strong> Deixa aquí la teva ressenya <br> </strong></label>
-                        <input type="text" id="idcoment" required placeholder="Comentari"> <br> <br>
-                    <input type="reset" value="Borra TOTA la teva selecció"> <br><br>
-                    <input type="submit" value="Envia la teva consulta"><br><br>
+                <form class="background_2 formRessenya">
+                    <label for="idnomRessenya"> <strong> Nom complert </strong> </label><br>
+                        <p class="llarginput"> </p> <br>
+                        <input class= "textinput" type="text" id="idnomRessenya" placeholder="Nom + Cognom 1 + Cognom 2" name="idnom"><br><br>
+                    <label  for="idpuntsHK"> <strong> Valoració del joc </strong> <br></label>
+                        <p class="errornum"></p><br>
+                        <input class="numinput" type="number" id="idpuntsHK" placeholder="Puntuació 1-10 (fins dos decimals)"><br><br>
+                    <label for="idhora"> <strong> Introdueix el número d'hores jugades <br> </strong></label><br>
+                        <p class= "horaerror"></p><br>
+                        <input type="number" class="horainput" id="idhora" placeholder="Número (h, no decimals)"> <br> <br>
+                    <label for="idtextareaHK"> <strong> Deixa aquí la teva ressenya <br> </strong></label>
+                        <p class="llargtext"></p><br>
+                        <textarea class="textarea" id="textareaHK" rows="5" cols="50" placeholder="Comentari"></textarea><br>
+                    <button class ="reset hover" type="button">Borra TOTA la teva selecció</button> <br><br>
+                    <button class="submit hover" type="submit">Envia la teva consulta</button><br><br>
                 </form>
+            <section class="resum"></section> <!--Secció on es mostra la targeta de resum-->
             </section>
             </div>
         </main>
          <footer class="bottom background_2">
-                <button class="background_2 background_switch" type="button"> Canviar de fons </button><br>
+                <button class="background_2 hover background_switch" type="button"> Canviar de fons </button><br>
                  <img src="Img_IA/Logo.png" alt="Logo" width="100" height="100">
                 <address>
                   <p> C/Llobregat 11, Sant Joan Depí, 08970. <br><br>

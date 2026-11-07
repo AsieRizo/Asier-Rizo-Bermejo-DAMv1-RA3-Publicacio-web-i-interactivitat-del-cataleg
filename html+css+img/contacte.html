@@ -73,35 +73,40 @@
                      Farem noves ofertes en les pròximes setmanes? <br> Pregunta el que vulguis! El nostre equip et respondrà ben aviat per email </p>
                      <!--Nota: el formulari no s'envia a cap lloc-->
                <section>
-                 <form class="background_2 form" method="post" novalidate>
-                    <label for="idnom"> <strong> Nom complert </strong> </label>
-                        <label class="llarginput"> </label> <br>
+                 <form class="background_2 formContacte" method="post" novalidate>
+                    <label for="idnom"> <strong> Nom complert </strong> </label><br>
+                        <p class="llarginput"> </p> 
                         <input class= "textinput" type="text" id="idnom" placeholder="Nom + Cognom 1 + Cognom 2" name="idnom"><br><br>
-                    <label for="idcorreu"> <strong>Correu electrònic </strong>  </label>
-                         <label class="errorgmail"></label><br>
+                    <label for="idcorreu"> <strong>Correu electrònic </strong>  </label><br>
+                         <p class="errorgmail"></p><br>
                         <input class ="gmailinput" type="email" id="idcorreu" placeholder="correu@gmail.com"><br><br>
-                    <label for="iddata"> <strong>Data de la consulta </strong> </label>
-                        <input type="date" id="iddata"> <br><br>
-                    <label for="motius"> <strong> Motiu de la consulta </strong></label>
-                        <select id="motius" name="motius">
-                            <option value="infoBotiga"> Demanar informació sobre la botiga </option>
-                            <option value="infoJoc"> Demanar informació sobre algun joc publicat o de pròxim llançament</option>
-                            <option value="reclamacio">Posar una reclamació</option>
-                            <option value="ressenya">Posar una resenya a la botiga</option>
-                            <option value="altres">Altres motius (indica-ho al teu comentari)</option>
-                        </select><br><br>
-                    <textarea class="textarea" id="textarea" rows="5" cols="50" placeholder="Comentari"></textarea><br>
-                        <label class="llargtext"></label>
-                    <label class="numinput" for="idpunts"> <strong> Valoració servei 1-10 (opcional) </strong> <br></label>
-                        <label class="errornum"></label><br>
-                        <input type="number" id="idpunts"><br><br>
-                    <input class="reset" type="reset" value="Borra TOTA la teva selecció"> <br><br>
-                    <input class="submit" type="submit" value="Envia la teva consulta"><br><br>
+                    <label for="iddataContacte"> <strong>Data de la consulta </strong><br> </label>
+                        <p class="diaerror"></p><br>
+                        <input class="diainput" type="date" id="iddataContacte"> <br><br>
+                    <label for="motius"> <strong> Motiu de la consulta <br></strong></label>
+                        <select class="select" id="motius" name="motius">
+                            <option  value="default"> Tria una opció</option>
+                            <option  value="Demanar informació sobre la botiga "> Demanar informació sobre la botiga </option>
+                            <option  value="Demanar informació sobre algun joc publicat o de pròxim llançament"> Demanar informació sobre algun joc publicat o de pròxim llançament</option>
+                            <option  value="Posar una reclamació">Posar una reclamació</option>
+                            <option  value="Posar una resenya a la botiga">Posar una resenya a la botiga</option>
+                            <option  value="Altres motius">Altres motius (indica-ho al teu comentari)</option>
+                        </select><br>
+                        <p class="opcioSelectError"></p><br>
+                    <label for="textarea"> <strong>Deixa el teu comentari</strong></label><br>
+                        <p class="llargtext"></p><br>
+                        <textarea class="textarea" id="textarea" rows="5" cols="50" placeholder="Comentari"></textarea><br><br>
+                    <label for="numinput"> <strong> Valoració servei 1-10 </strong> <br></label>
+                        <p class="errornum"></p><br>
+                        <input class="numinput"  type="number" id="numinput" placeholder="Puntuació 1-10 (fins 2 decimals)"><br><br>
+                    <button class="reset hover" type="button">Borra TOTA la teva selecció</button> <br><br>
+                    <button class="submit hover" type="submit">Envia la teva consulta</button></button><br><br>
                 </form>
             </section>
+            <section class="resum"></section> <!--Secció on es mostra la targeta de resum-->
         </main>
         <footer class="bottom background_2">
-                <button class="background_2 background_switch" type="button"> Canviar de fons </button><br>
+                <button class="background_2 background_switch hover" type="button"> Canviar de fons </button><br>
                  <img src="Img_IA/Logo.png" alt="Logo" width="100" height="100">
                 <address>
                   <p> C/Llobregat 11, Sant Joan Depí, 08970 <br><br>
