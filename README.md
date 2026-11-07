@@ -1,10 +1,8 @@
-EXPLICACIÓ DEL CODI: 
-- UBICACIÓ DE LES FUNCIONALITATS:
-  - Búsqueda dinàmica i filtratge de jocs amb targetes (Apartats A i B): js_cataleg.js.
-  - Validació en directe del formulari (Apartat C): js_contacte.js.
-  - Canvi de fons (Apartat D): js_tema.js.
+- UBICACIÓ I EXPLICACIÓ DE LES FUNCIONALITATS:
+  - Búsqueda dinàmica i filtratge de jocs amb targetes (Apartats A i B): js/cataleg.js => Crea targetes de cada joc en dins del grip del catàleg i les borra o fa aparèixer en temps real segons les espcificacions d'un filtre que funciona segons el títol introduït per l'usuari i la plataforma.
+  - Validació en directe del formulari (Apartat C): js_contacte.js => Controla que el format de cada camps dels formularis sigui correcte mostrant missatges d'error en temps real i mostrant targetes de resum en enviar amb els inputs de l'usuari sempre que tot sigui correcte.
+  - Canvi de fons (Apartat D): js_tema.js => canvia de mode clar a mode fosc l'estètica de la pàgina.
 - Tria de let i const:
   - Const: el millor exemple és l'IVA, que és inmutable.
   - Let: qualsevol de les que validen que un camp del formulari tingui el format correcte, com "textAreaCorrecte", ja que aquests varien constantment.
-- Funció de Callback:
-  - Les funcions que validen el format dels camps dels formularis quan detecta un canvi en el camp causat per un input de l'usuari, com "textarea.addEventListener("input", () => {...})"
+- Funció de Callback (H1) Les funcions que validen el format dels camps dels formularis quan detecta un canvi en el camp causat per un input de l'usuari, com "textarea.addEventListener("input", () => {...})"
