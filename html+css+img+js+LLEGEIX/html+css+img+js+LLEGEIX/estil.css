@@ -1,0 +1,244 @@
+body{
+    font-family:'Gugi', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+    .background_1 {
+        color: white;
+        background-color: coral;
+    }
+
+    .background_2, .background_2 input {
+        color:coral;
+        background-color:white;
+    }
+    body.dark_mode.background_1 {
+        color: rgb(19, 19, 19);
+        background-color: rgb(172, 46, 0);
+    }
+
+    body.dark_mode .background_2, body.dark_mode .background_2 td, body.dark_mode .background_2 th, 
+    body.dark_mode .background_2 input,body.dark_mode .background_2 textarea, body.dark_mode .background_2 select,
+    body.dark_mode .background_2 button {
+        color:rgb(172, 46, 0);
+        background-color:rgb(19, 19, 19); ;
+        border: 0.2em solid rgb(172, 46, 0);
+    }
+
+    body.dark_mode.background_1 img, body.dark_mode.background_1 iframe{
+        box-shadow: rgb(19, 19, 19) 1em 1em;
+
+    }
+
+    body.dark_mode main .background_2 img{
+        box-shadow: rgb(172, 46, 0) 1em 1em;
+
+    }
+
+
+    ul {
+        list-style: none;
+        line-height: 1.5em;
+        padding-left: 0;
+        text-align: left;
+        }
+         .nav { 
+        margin: 0.5em 2em 0.5em 2em;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        gap: 2em;
+        padding: 1em;
+        }
+
+    h1, .inici {
+        margin-top: 0;
+        font-size: 6.5em; 
+        letter-spacing: 0.2em;
+        line-height: 1em;
+    }
+
+    table, th, tr, td, form, input, textarea, select, caption, button, .contenidor {
+        
+        border-radius: 2em;
+        padding: 0.5em;
+        margin: 0.5em;
+        border:0.2em solid coral;
+    }
+
+    form, input, textarea, select{
+        width: 50%;
+    }
+
+
+    header {
+        text-align: center;
+        border-bottom-left-radius: 4em;
+        border-bottom-right-radius: 4em;
+        width: 100%;
+        padding: 4em 0 2em 0;
+        margin: 0 0 3em 0;
+    }
+
+    main {
+        padding: 1em 2em 3em 2em;   
+    }
+
+    img, iframe {
+        border-radius: 1em;
+        margin: 3em 1em 3em 1em;
+        box-shadow: white 1em 1em;
+    }
+
+    div article img, ul img {
+        box-shadow: coral 1em 1em;
+    }
+
+    table  {     
+        table-layout:auto;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    section form, .contenidor {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+     button.hover:hover, input.hover:hover,
+      body.dark_mode.background_1 button.hover:hover,
+       body.dark_mode.background_1 input.hover:hover {
+        background-color: blueviolet;
+        color:coral;
+    }
+    
+    .hover:hover, body.dark_mode.background_1 .hover:hover {
+        color: blueviolet;
+    }
+
+
+    .doubleflexbox{
+        flex-direction: row;
+        flex-wrap: wrap;
+        display:inline-flex;
+        justify-content:space-around;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .flexboxdiv{
+        flex: 1 1 320px;
+        display: block;
+        max-width: 100%;
+        min-width: 0;
+        margin: 2em 2em 0 0; 
+        }
+
+    .jocs{
+        text-align: center;
+        margin: 3em 0 3em 0;
+    }
+
+    .estoc_baix,  body.dark_mode .estoc_baix{
+       border: 1em solid rgb(70, 0, 60);
+    }
+
+    .descripcio {
+        text-align: justify;
+        padding: 2em;
+        margin: 2em 3em 2em 3em;
+        border-radius: 3em;
+     }
+
+     .errorformat, body.dark_mode.background_1 .errorformat{
+        color:red;
+     }
+
+    #grid {
+        display: grid;
+        margin: 1em 1em 1em 1em;
+        grid-gap: 2em;
+        grid-template-columns: 7fr 7fr 5fr;
+        grid-template-areas: 
+        "header1 header1 header1"
+        "cerca cerca cerca"
+        "joc joc noticies"
+        "joc joc llancaments"
+        "joc joc llancaments"
+        "joc joc llancaments"
+        "peu peu peu2";
+    }
+        #header1, #noticies, #llancaments, #peu, #peu2, #cerca, .jocgrid{
+            line-height: 2em;
+            border-radius: 2em;
+            padding: 1em 2em 1em 2em;
+            display: block;
+            overflow: auto;
+            min-width: 10%;   
+        }
+
+        #header1 {
+            grid-area: header1;
+        }
+        #cerca{
+            grid-area: cerca;
+            margin: auto;
+        }
+        
+        #header2 {
+            grid-area: header2;   
+        }
+        #cataleg {
+            grid-area: joc;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+        }
+        #noticies {
+            grid-area: noticies;
+            }
+        #llancaments {
+            grid-area: llancaments;
+            }
+         #peu {
+            grid-area: peu;
+        }
+         #peu2 {
+            grid-area: peu2; }
+    
+    @media(max-width: 768px) {
+        #grid { grid-template-columns: 1fr; 
+            grid-template-areas: none; }
+
+        #grid > * { grid-area: auto; flex-wrap: wrap; }
+        
+        img, iframe {
+            max-width: 100%;
+             height: auto;
+            }
+        
+        #cataleg{
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 16em), 1fr));
+        }
+        
+        form {
+            width: 85% !important;
+        }
+
+        h1, .inici {font-size: 3.5em;
+            overflow-wrap: break-word;
+        }
+    }  
+    
+    .bottom {
+        border-top-left-radius: 4em;
+        border-top-right-radius: 4em;
+        height: 10%;
+        width: 100%;
+        padding: 2em 0 5em 0;  
+    }
+
