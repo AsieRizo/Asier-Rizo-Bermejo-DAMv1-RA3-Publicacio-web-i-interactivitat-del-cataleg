@@ -189,9 +189,12 @@ function dataValidar () {
 function borrarErrors (llista) {
    /*Per a cada element de l'array on estan enmagatzemats els missatges d'error, sempre que
     que aparegui en un formulari borra aquest missatge*/
-    llista.forEach((missatge) =>{
+    llista.forEach((missatge) =>{ 
     if (missatge!==null&& missatge.firstElementChild!==null) {
-        missatge.firstElementChild.textContent=``;
+        /*Selecciona el primer element que troba dins del div, és a dir el "p" que conté el missatge 
+        d'error i li treu el contingut de text i la classe d'eror. Així s'evita que es borri el "p" directament
+        i no es torni a mostrar el missatge d'error mai més després del reset*/
+        missatge.firstElementChild.textContent=``; 
         missatge.firstElementChild.classList.remove("errorformat");
     }
    });//Retorna la validació de cada camp al seu estat original
